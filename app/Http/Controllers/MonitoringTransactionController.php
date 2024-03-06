@@ -83,39 +83,35 @@ class MonitoringTransactionController extends Controller
         $currentTime = Carbon::now()->format('H:i:s');
         $currentDate = Carbon::now()->format('Y-m-d');
 
-        // dd($host);
-        foreach ($host as $key => $value) {
-        //     # code...
-            exec("ping -c 5 $value", $output[$key][], $resultCode);
-         
-            
 
-            for ($i=1; $i < 6 ; $i++) { 
-               
-                if ($resultCode == 0 ) {
-                    # code...
-                    $data = [
-                        'trans_tanggal'=> $currentDate,
-                        'trans_waktu'=> $currentTime,
-                        'trans_tipe'=>'PING',
-                        'trans_device_id'=> $key,
-                        'trans_result'=>$output[$key],
-                        'trans_status'=>$resultCode,
-                    ];
-                } else {
-                    $data = [
-                        'trans_tanggal'=> $currentDate,
-                        'trans_waktu'=> $currentTime,
-                        'trans_tipe'=>'PING',
-                        'trans_device_id'=> $key,
-                        'trans_result'=>"",
-                        'trans_status'=>$resultCode,
-                    ];
-                }
-                dd($data);
-                // MonitoringTransaction::create($data);
+        foreach ($host as $key => $value) {
+            exec("ping -c 5 $value", $output[$key], $resultCode);
+         
+            $selectedValues = array_filter($output[$key], function($tmp) {
+                                    // Kondisi untuk memilih nilai string
+                                    return strpos($tmp, '5 packets transmitted') !== false;
+                                    });
+            $selectedValues = reset($selectedValues);
+            if ($resultCode == 0) {
+                # code...
+                $hasilPing = "UP";
+            } elseif ($resultCode == 1) {
+                # code...
+                $hasilPing = "DOWN";
+            } else {
+                $hasilPing = "UNKNOWN";
             };
-        
+            $data[$key] = [
+                'trans_tanggal'=> $currentDate,
+                'trans_waktu'=> $currentTime,
+                'trans_tipe'=>'PING',
+                'trans_device_id'=> $key,
+                'trans_result'=> $selectedValues,
+                'trans_status'=>$hasilPing,
+            ];
+            // dd($data[$key]);
+            MonitoringTransaction::create($data[$key]);
         }
+       
     }
 }
