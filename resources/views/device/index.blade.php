@@ -76,15 +76,15 @@
                               <a>{{ $alat->device_site_kode }} </a>
                             </td>
                             <td>
-                              <button type="button" class="btn  @if($alat->device_status=="AKTIF")
+                              <button type="button" disabled class="btn  @if($alat->device_status=="AKTIF")
                                 btn-success
                               @else
                               btn-danger
                               @endif btn-xs">{{ $alat->device_status }}</button>
                             </td>
                             <td>
-                              <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                              {{-- <a href="" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a> --}}
+                              <a href="{{ url('/devices/edit') }}/ {{ $alat->id }}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
                               {{-- <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a> --}}
                             </td>
                           </tr>  

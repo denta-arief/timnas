@@ -74,7 +74,7 @@ class MonitoringTransactionController extends Controller
         return view('monitoring.device', compact('$device'));
     }
 
-    public function ping()
+    public static function ping()
     {
         $host = Device::all()->pluck('device_ip','id');
         // $host = "192.168.14.251";
