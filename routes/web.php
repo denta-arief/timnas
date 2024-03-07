@@ -25,6 +25,8 @@ Route::get('/index', function () {
 
 Route::prefix('devices')->group(function () {
     Route::get('/', [DeviceController::class, 'index']);
+    Route::get('/create', [DeviceController::class, 'create']);
+
 });
 
 Route::prefix('monitoring')->group(function () {

@@ -12,7 +12,7 @@
         <li><a><i class="fa-solid fa-server"></i> Devices <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="{{ url('/devices') }}">List Devices</a></li>
-            <li><a href="form_advanced.html">Tambah Device</a></li>
+            <li><a href="{{ url('/devices/create') }}">Tambah Device</a></li>
           </ul>
         </li>
     
