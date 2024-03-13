@@ -9,7 +9,7 @@
             <li><a href="index3.html">Dashboard3</a></li>
           </ul>
         </li>
-        <li><a><i class="fa-solid fa-server"></i> Devices <span class="fa fa-chevron-down"></span></a>
+        <li><a><i class='fa fa-server'></i> Devices <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="{{ url('/devices') }}">List Devices</a></li>
             <li><a href="{{ url('/devices/create') }}">Tambah Device</a></li>

@@ -24,7 +24,7 @@ class PingHost extends Command
      *
      * @var string
      */
-    protected $description = 'Memanggil function ping() dari MonitoringTransaction dijalankan setiap 1 jam ';
+    protected $description = 'Memanggil function ping() dari MonitoringTransaction dijalankan setiap 30 menit ';
 
     protected $controller;
     

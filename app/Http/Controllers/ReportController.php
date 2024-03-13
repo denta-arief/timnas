@@ -9,6 +9,7 @@ use App\Models\MonitoringTransaction;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
+use SnappyPDF;
 
 class ReportController extends Controller
 {
@@ -27,11 +28,11 @@ class ReportController extends Controller
             # code...
             $result = $value->trans_status;
         }
-        // dd($tmp2);
+        // dd($rpt_date_2);
         return $result;
     }
     
-    public function rpt_daily(Request $request) {
+    public function rpt_daily(Request $request, $pdf=null) {
         $hour = Config::select('rpt_daily_hours')->get();
         $jml = Config::select('rpt_daily_hours')->count();
         $device = Device::all();
@@ -64,11 +65,26 @@ class ReportController extends Controller
                 $arr_status[$valueDevice->id][$valueHour->rpt_daily_hours] = $status;
             }
         }
-        $html = View::make('report.pdf_daily',compact('hour','jml','device','arr_status', 'valueTanggal'))->render();
-        // dd($html);
-        // Storage::put('/storage/dailyReport.html', $html);
-        return view('report.daily',compact('hour','jml','device','arr_status', 'valueTanggal'));
-    }
 
-   
+        if ($pdf == null) {
+            $html = View::make('report.pdf_daily',compact('hour','jml','device','arr_status', 'valueTanggal'))->render();
+            // dd($html);
+            Storage::put('/storage/dailyReport.html', $html);
+            # code...
+            return view('report.daily',compact('hour','jml','device','arr_status', 'valueTanggal'));
+        }elseif($pdf == "TRUE") {
+            $isiFile = Storage::get('/storage/dailyReport.html');
+            $output = null;
+            $output = SnappyPDF::loadHTML($isiFile)->output();
+            
+            $disk = Storage::disk('public');
+
+            // Save the file with the PDF output.
+            if ($disk->put('example.pdf', $output)) {
+                // Successfully stored. Return the full path.
+                // return redirect('/report/daily');
+            }
+
+        };
+    }
 }

@@ -11,8 +11,8 @@
     <!-- Bootstrap -->
     <link href="{{ url('/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Font Awesome -->
-    {{-- <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet"> --}}
-    <script src="https://kit.fontawesome.com/3066ed00b4.js" crossorigin="anonymous"></script>
+    <link href="{{ url('/vendors/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+    {{-- <script src="https://kit.fontawesome.com/3066ed00b4.js" crossorigin="anonymous"></script> --}}
     <!-- NProgress -->
     <link href="{{ url('/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
 

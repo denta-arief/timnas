@@ -39,16 +39,13 @@
                             </td>
 
                             @foreach ($arr_status[$item->id] as $dev)
-                              {{-- <td>
-                                {{ $dev }}
-                              </td> --}}
-                              @if ($dev == 'UP')
-                                <td><i class="fa-solid fa-check"></i></td>
-                              @elseif ($dev== 'DOWN')
-                                <td><i class="fa-solid fa-circle-xmark"></i></i></td>
-                              @else
-                                <td>NODATA</td>
-                              @endif
+                            @if ($dev == 'UP')
+                              <td style="text-align: center"><i class='fa fa-check-square-o'></i></td>
+                            @elseif ($dev== 'DOWN')
+                              <td style="text-align: center"><i class='fa fa-times-circle'></i></td>
+                            @else
+                              <td style="text-align: center">NODATA</td>
+                            @endif
                             @endforeach
 
                           </tr>
@@ -64,21 +61,4 @@
           </div>
         </div>
    
-@endsection
-
-@section('style')
-
-    <!-- iCheck -->
-    <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-    <!-- bootstrap-wysiwyg -->
-    <link href="/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
-    <!-- Select2 -->
-    <link href="/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
-    <!-- Switchery -->
-    <link href="/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
-    <!-- starrr -->
-    <link href="/vendors/starrr/dist/starrr.css" rel="stylesheet">
-    <!-- bootstrap-daterangepicker -->
-    <link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-
 @endsection

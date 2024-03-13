@@ -8,18 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Gentelella Alela! | </title>
+    <title>Gentelella Alela! </title>
 
     <!-- Bootstrap -->
-    <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url('/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Font Awesome -->
-    {{-- <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet"> --}}
-    <script src="https://kit.fontawesome.com/3066ed00b4.js" crossorigin="anonymous"></script>
+    <link href="{{ url('/vendors/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+    {{-- <script src="https://kit.fontawesome.com/3066ed00b4.js" crossorigin="anonymous"></script> --}}
+    
     <!-- NProgress -->
-    <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="{{ url('/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="/build/css/custom.min.css" rel="stylesheet">
+    <link href="{{ url('/build/css/custom.min.css') }}" rel="stylesheet">
 
     @yield('style')
   </head>
@@ -75,16 +76,16 @@
     </div>
 
     <!-- jQuery -->
-    <script src="/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="{{ url('/vendors/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap -->
-   <script src="/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="{{ url('/vendors/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <!-- FastClick -->
-    <script src="/vendors/fastclick/lib/fastclick.js"></script>
+    <script src="{{ url('/vendors/fastclick/lib/fastclick.js') }}"></script>
     <!-- NProgress -->
-    <script src="/vendors/nprogress/nprogress.js"></script>
+    <script src="{{ url('/vendors/nprogress/nprogress.js') }}"></script>
     
     <!-- Custom Theme Scripts -->
-    <script src="/build/js/custom.min.js"></script>
+    <script src="{{ url('/build/js/custom.min.js') }}"></script>
     @yield('script')
   </body>
 </html>

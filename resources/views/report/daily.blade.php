@@ -42,7 +42,7 @@
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#"><i class="fa-regular fa-file-pdf"></i> Export PDF</a>
+                        <a class="dropdown-item" href="/report/daily/TRUE"><i class="fa-regular fa-file-pdf"></i> Export PDF</a>
                         <a class="dropdown-item" href="#">Settings 2</a>
                       </div>
                   </li>
@@ -86,15 +86,12 @@
                             </td>
 
                             @foreach ($arr_status[$item->id] as $dev)
-                              {{-- <td>
-                                {{ $dev }}
-                              </td> --}}
                               @if ($dev == 'UP')
-                                <td><i class="fa-solid fa-check"></i></td>
+                                <td style="text-align: center"><i class='fa fa-check-square-o'></i></td>
                               @elseif ($dev== 'DOWN')
-                                <td><i class="fa-solid fa-circle-xmark"></i></i></td>
+                                <td style="text-align: center"><i class='fa fa-times-circle'></i></td>
                               @else
-                                <td>NODATA</td>
+                                <td style="text-align: center">NODATA</td>
                               @endif
                             @endforeach
 
@@ -113,57 +110,3 @@
 </div>
 @endsection
 
-
-@section('script')
-
-  <!-- jQuery -->
-  <script src="{{ url('/vendors/jquery/dist/jquery.min.js') }}"></script>
-  <!-- Bootstrap -->
-  <script src="{{ url('/vendors/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-  <!-- FastClick -->
-  <script src="{{ url('/vendors/fastclick/lib/fastclick.js') }}"></script>
-  <!-- NProgress -->
-  <script src="{{ url('/vendors/nprogress/nprogress.js') }}"></script>
-  <!-- bootstrap-daterangepicker -->
-  <script src="{{ url('/vendors/moment/min/moment.min.js') }}"></script>
-  <script src="{{ url('/vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
-  <!-- bootstrap-datetimepicker -->    
-  <script src="{{ url('/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') }}"></script>
-  <!-- Ion.RangeSlider -->
-  <script src="{{ url('/vendors/ion.rangeSlider/js/ion.rangeSlider.min.js') }}"></script>
-  <!-- Bootstrap Colorpicker -->
-  <script src="{{ url('/vendors/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js') }}"></script>
-  <!-- jquery.inputmask -->
-  <script src="{{ url('/vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js') }}"></script>
-  <!-- jQuery Knob -->
-  <script src="{{ url('/vendors/jquery-knob/dist/jquery.knob.min.js') }}"></script>
-  <!-- Cropper -->
-  <script src="{{ url('/vendors/cropper/dist/cropper.min.js') }}"></script>
-
-  <!-- Custom Theme Scripts -->
-  <script src="{{ url('/build/js/custom.min.js') }}"></script>
-@endsection
-
-@section('style')
-  <!-- Bootstrap -->
-  <link href="{{ url('/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link href="{{ url('/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-  <!-- NProgress -->
-  <link href="{{ url('/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
-  <!-- bootstrap-daterangepicker -->
-  <link href="{{ url('/vendors/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
-  <!-- bootstrap-datetimepicker -->
-  <link href="{{ url('/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css') }}" rel="stylesheet">
-  <!-- Ion.RangeSlider -->
-  <link href="{{ url('/vendors/normalize-css/normalize.css') }}" rel="stylesheet">
-  <link href="{{ url('/vendors/ion.rangeSlider/css/ion.rangeSlider.css') }}" rel="stylesheet">
-  <link href=" {{ url('/vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css') }}" rel="stylesheet">
-  <!-- Bootstrap Colorpicker -->
-  <link href=" {{ url('/vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css') }}" rel="stylesheet">
-
-  <link href=" {{ url('/vendors/cropper/dist/cropper.min.css') }}" rel="stylesheet">
-
-  <!-- Custom Theme Style -->
-  <link href="{{ url('/build/css/custom.min.css') }}" rel="stylesheet">
-@endsection

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\MonitoringTransactionController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\BotTelegramController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ Route::get('/index', function () {
     return view('index');
 });
 
+
 Route::prefix('devices')->group(function () {
     Route::get('/', [DeviceController::class, 'index']);
     Route::get('/create', [DeviceController::class, 'create']);
@@ -40,5 +42,7 @@ Route::prefix('monitoring')->group(function () {
 Route::prefix('report')->group(function () {
     Route::get('/daily', [ReportController::class, 'rpt_daily']);
     Route::post('/daily', [ReportController::class, 'rpt_daily'])->name('route_daily');
-    Route::get('/pdf_daily', [ReportController::class, 'rpt_daily_pdf']);
+    // Route::get('/pdf_daily', [ReportController::class, 'rpt_daily_pdf']);
+    Route::get('/daily/{pdf}', [ReportController::class, 'rpt_daily']);
+    Route::get('/sendpdf', [BotTelegramController::class, 'sendPdf']);
 });

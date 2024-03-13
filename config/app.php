@@ -169,6 +169,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Barryvdh\Snappy\ServiceProvider::class,
+        Telegram\Bot\Laravel\TelegramServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -186,6 +187,7 @@ return [
         // 'Example' => App\Facades\Example::class,
         'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
         'SnappyPDF' => Barryvdh\Snappy\Facades\SnappyPDF::class,
+        'Telegram' => \Telegram\Bot\Laravel\Facades\Telegram::class,
     ])->toArray(),
 
 ];
