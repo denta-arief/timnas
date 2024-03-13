@@ -13,8 +13,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('ping:host')->hourly();
-        // $schedule->command('ping:host')->everyMinute();
+        // $schedule->command('ping:host')->hourly();
+        $schedule->command('ping:host')->everyThreeMinutes();
     }
 
     /**

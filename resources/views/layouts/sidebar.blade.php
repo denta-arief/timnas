@@ -19,7 +19,7 @@
         
         <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="chartjs.html">Laporan Harian</a></li>
+            <li><a href="{{ url('/report/daily') }}">Laporan Harian</a></li>
           </ul>
         </li>
         <li><a><i class="fa-solid fa-screwdriver-wrench"></i> </i>Settings <span class="fa fa-chevron-down"></span></a>

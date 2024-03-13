@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\MonitoringTransactionController;
+use App\Http\Controllers\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +35,10 @@ Route::prefix('devices')->group(function () {
 Route::prefix('monitoring')->group(function () {
     Route::get('/router', [MonitoringTransactionController::class, 'router']);
     Route::get('/ping', [MonitoringTransactionController::class, 'ping']);
+});
+
+Route::prefix('report')->group(function () {
+    Route::get('/daily', [ReportController::class, 'rpt_daily']);
+    Route::post('/daily', [ReportController::class, 'rpt_daily'])->name('route_daily');
+    Route::get('/pdf_daily', [ReportController::class, 'rpt_daily_pdf']);
 });

@@ -173,9 +173,9 @@
     <link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
 
-    @endsection
+@endsection
 
-    @section('script')
+@section('script')
     <!-- bootstrap-progressbar -->
     <script src="/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
     <!-- iCheck -->

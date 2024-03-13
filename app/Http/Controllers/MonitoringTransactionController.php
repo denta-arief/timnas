@@ -80,8 +80,8 @@ class MonitoringTransactionController extends Controller
         // $host = "192.168.14.251";
         $output = null;
         $resultCode = null;
-        $currentTime = Carbon::now()->format('H:i:s');
-        $currentDate = Carbon::now()->format('Y-m-d');
+        $currentTime = Carbon::now();
+        $currentDate = Carbon::now()->format('Y-m-d H:i:s');
 
 
         foreach ($host as $key => $value) {

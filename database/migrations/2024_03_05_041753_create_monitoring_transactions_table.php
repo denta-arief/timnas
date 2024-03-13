@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('monitoring_transactions', function (Blueprint $table) {
             $table->id();
-            $table->date('trans_tanggal');
+            $table->timestamp('trans_tanggal');
             $table->time('trans_waktu');
             $table->string('trans_tipe');
             $table->unsignedBigInteger('trans_device_id');

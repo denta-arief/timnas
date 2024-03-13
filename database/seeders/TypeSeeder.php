@@ -8,6 +8,7 @@ use App\Models\DeviceType;
 use Illuminate\Support\Facades\DB;
 use Database\Factories\DeviceTypeFactory;
 use App\Models\Site;
+use App\Models\Config;
 
 class TypeSeeder extends Seeder
 {
@@ -18,6 +19,7 @@ class TypeSeeder extends Seeder
     {
         DB::table('device_types')->delete();
         DB::table('sites')->delete();
+        DB::table('configs')->delete();
         $types = [
             ['id' => 1, 'type_name' => 'Router'],
             ['id' => 2, 'type_name' => 'Access Point',],
@@ -63,11 +65,27 @@ class TypeSeeder extends Seeder
             ['id' => 36, 'site_kode' => 'KPLO', 'site_name'=>'Kantor LO', 'site_wilayah' =>'Jakarta', 'site_aktif'=>1],
             
         ];
+        $configs = [
+            ['id' => 1, 'rpt_daily_hours' => '07:00'],
+            ['id' => 2, 'rpt_daily_hours' => '08:00'],
+            ['id' => 3, 'rpt_daily_hours' => '09:00'],
+            ['id' => 4, 'rpt_daily_hours' => '10:00'],
+            ['id' => 5, 'rpt_daily_hours' => '11:00'],
+            ['id' => 6, 'rpt_daily_hours' => '12:00'],
+            ['id' => 7, 'rpt_daily_hours' => '13:00'],
+            ['id' => 8, 'rpt_daily_hours' => '14:00'],
+            ['id' => 9, 'rpt_daily_hours' => '15:00'],
+            ['id' => 10, 'rpt_daily_hours' => '16:00'],
+            ['id' => 11, 'rpt_daily_hours' => '17:00'],
+        ];
         foreach($types as $tipe){
             DeviceType::create($tipe);
         }
         foreach($sites as $site){
             Site::create($site);
+        }
+        foreach($configs as $config){
+            Config::create($config);
         }
     }
 }
