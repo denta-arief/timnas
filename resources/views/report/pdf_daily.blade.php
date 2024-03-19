@@ -25,11 +25,14 @@
                           @endforeach
                         </tr>
                       </thead>
+                      @php
+                           $i=1; 
+                      @endphp
                       <tbody>
                         @foreach ($device as $item)
                           <tr>
                             <td>
-                              {{ $item->id }}
+                              {{ $i ++ }}
                             </td>
                             <td>
                               {{ $item->device_site_kode }}

@@ -36,8 +36,12 @@ class ReportController extends Controller
         $hour = Config::select('rpt_daily_hours')->get();
         $jml = Config::select('rpt_daily_hours')->count();
         $device = Device::all();
+        $device = Device::select('devices.*','sites.site_wilayah')
+                    ->leftjoin('sites','site_kode','=','device_site_kode')
+                    ->orderBy('sites.site_wilayah', 'ASC')
+                    ->get();
         $arr_status[][]= null;
-        // dd($request);
+        // dd($device);
       
         if ($request->_token<>null) {
             # code...
@@ -83,6 +87,10 @@ class ReportController extends Controller
             if ($disk->put('example.pdf', $output)) {
                 // Successfully stored. Return the full path.
                 // return redirect('/report/daily');
+                $headers = [
+                    'Content-Type' => 'application/pdf',
+                ];
+                return response()->file($disk->path('example.pdf'),$headers);
             }
 
         };

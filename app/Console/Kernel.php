@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('ping:host')->hourly();
         $schedule->command('ping:host')->everyThirtyMinutes();
+        $schedule->command('app:send-daily-pdf')->dailyAt('17:15');
     }
 
     /**

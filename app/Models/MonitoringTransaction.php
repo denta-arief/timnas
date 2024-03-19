@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Device;
 
 class MonitoringTransaction extends Model
 {
@@ -16,4 +17,7 @@ class MonitoringTransaction extends Model
         'trans_result',
         'trans_status',
     ];
+    public function device() {
+        return $this->belongsTo('App\Models\Device');
+    }
 }

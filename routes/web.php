@@ -25,6 +25,7 @@ Route::get('/index', function () {
     return view('index');
 });
 
+Route::get('/test',[BotTelegramController::class,'testDevelop']);
 
 Route::prefix('devices')->group(function () {
     Route::get('/', [DeviceController::class, 'index']);

@@ -61,7 +61,7 @@
                     <table class="table table-striped projects">
                       <thead>
                         <tr align="center">
-                          <th rowspan="2" style="width: 1%">ID</th>
+                          <th rowspan="2" style="width: 1%">NO</th>
                           <th rowspan="2" style="width: 20%">SITE</th>
                           <th rowspan="2">IP ADDRESS</th>
                           <th colspan="{{ $jml }}">Waktu</th>
@@ -72,11 +72,14 @@
                           @endforeach
                         </tr>
                       </thead>
+                      @php
+                           $i=1; 
+                      @endphp
                       <tbody>
                         @foreach ($device as $item)
                           <tr>
                             <td>
-                              {{ $item->id }}
+                              {{ $i ++ }}
                             </td>
                             <td>
                               {{ $item->device_site_kode }}
