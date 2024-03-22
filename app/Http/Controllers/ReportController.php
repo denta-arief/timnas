@@ -38,6 +38,7 @@ class ReportController extends Controller
         $device = Device::all();
         $device = Device::select('devices.*','sites.site_wilayah')
                     ->leftjoin('sites','site_kode','=','device_site_kode')
+                    ->where('devices.device_status','AKTIF')
                     ->orderBy('sites.site_wilayah', 'ASC')
                     ->get();
         $arr_status[][]= null;
