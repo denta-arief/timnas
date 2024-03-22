@@ -45,7 +45,7 @@
                             @if ($dev == 'UP')
                               <td style="text-align: center"><i class='fa fa-check-square-o'></i></td>
                             @elseif ($dev== 'DOWN')
-                              <td style="text-align: center"><i class='fa fa-times-circle'></i></td>
+                              <td style="background:rgba(255,0,0, 0.4) ;text-align: center"><i class='fa fa-times-circle'></i></td>
                             @else
                               <td style="text-align: center">NODATA</td>
                             @endif
