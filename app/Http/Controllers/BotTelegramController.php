@@ -12,7 +12,8 @@ use App\Models\Site;
 use Illuminate\Support\Arr;
 use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Storage;
-use SnappyPDF;
+// use SnappyPDF;
+use Barryvdh\Snappy\Facades\SnappyPdf;
 use App\Models\User;
 
 class BotTelegramController extends Controller
