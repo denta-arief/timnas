@@ -180,6 +180,7 @@ class BotTelegramController extends Controller
                                     ->leftjoin('devices','devices.id','=','trans_device_id')
                                     ->leftjoin('sites','sites.site_kode','=','devices.device_site_kode')
                                     ->where('trans_tanggal','=', $jamterakhir)
+                                    ->where('devices.device_status','=','AKTIF')
                                     ->orderBy('trans_tanggal', 'DESC')
                                     ->get();
                         foreach ($query as $key => $value) {
@@ -204,6 +205,7 @@ class BotTelegramController extends Controller
                                     ->leftjoin('devices','devices.id','=','trans_device_id')
                                     ->where('trans_tanggal','=', $jamterakhir)
                                     ->where('trans_status','=','DOWN')
+                                    ->where('devices.device_status','=','AKTIF')
                                     ->orderBy('trans_tanggal', 'DESC')
                                     ->get();
                         foreach ($query as $key => $value) {

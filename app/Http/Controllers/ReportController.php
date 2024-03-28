@@ -9,7 +9,8 @@ use App\Models\MonitoringTransaction;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
-use SnappyPDF;
+//use SnappyPDF;
+use Barryvdh\Snappy\Facades\SnappyPdf;
 
 class ReportController extends Controller
 {

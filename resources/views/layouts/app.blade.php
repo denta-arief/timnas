@@ -43,7 +43,7 @@
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <h2>Staf TI</h2>
               </div>
               <div class="clearfix"></div>
             </div>
