@@ -181,7 +181,7 @@ class BotTelegramController extends Controller
                                     ->leftjoin('sites','sites.site_kode','=','devices.device_site_kode')
                                     ->where('trans_tanggal','=', $jamterakhir)
                                     ->where('devices.device_status','=','AKTIF')
-                                    ->orderBy('trans_tanggal', 'DESC')
+                                    ->orderBy('sites.site_wilayah', 'ASC')
                                     ->get();
                         foreach ($query as $key => $value) {
                             if ($value->trans_status == 'DOWN') {
