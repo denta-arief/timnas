@@ -40,6 +40,12 @@ Route::prefix('monitoring')->group(function () {
     Route::get('/ping', [MonitoringTransactionController::class, 'ping']);
 });
 
+Route::prefix('weighbridge')->group(function () {
+    Route::get('/sap', function () {
+        return view('weighbridge.sap');
+    });
+});
+
 Route::prefix('report')->group(function () {
     Route::get('/daily', [ReportController::class, 'rpt_daily']);
     Route::post('/daily', [ReportController::class, 'rpt_daily'])->name('route_daily');

@@ -22,9 +22,9 @@
             <li><a href="{{ url('/report/daily') }}">Laporan Harian</a></li>
           </ul>
         </li>
-        <li><a><i class="fa fa-bar-chart-o"></i> Jembatan Timbang <span class="fa fa-chevron-down"></span></a>
+        <li><a><i class="fa fa-balance-scale"></i> Jembatan Timbang <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="{{ url('/weighbridge/sync') }}">SAP DFARM CMS SYNC</a></li>
+            <li><a href="{{ url('/weighbridge/sap') }}">SAP DFARM CMS SYNC</a></li>
           </ul>
         </li>
         <li><a><i class="fa-solid fa-screwdriver-wrench"></i> </i>Settings <span class="fa fa-chevron-down"></span></a>
