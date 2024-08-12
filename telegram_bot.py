@@ -39,7 +39,7 @@ instruction = "In this chat, respond as if you're explaining things to a five-ye
 MAX_MESSAGE_LENGTH = 4096
 
 # Define SQLAlchemy engines
-engine_a = create_engine('mysql+pymysql://root:jejeluv@localhost:3306/ptpn_database')
+engine_a = create_engine('mysql+pymysql://homestead:secret@127.0.0.1:3306/timnas')
 engine_b = create_engine('mysql+pymysql://uapp:uapppass@192.168.200.52:3306/pks')
 
 # Establish MySQL database connection
