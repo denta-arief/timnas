@@ -23,11 +23,11 @@ load_dotenv()
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 API_KEY = os.getenv('GOOGLE_API_KEY')
-TELEGRAM_API_KEY = os.getenv('TELEGRAM_API_KEY')
-MYSQL_HOST = os.getenv('MYSQL_HOST')
-MYSQL_USER = os.getenv('MYSQL_USER')
-MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD')
-MYSQL_DATABASE = os.getenv('MYSQL_DATABASE')
+TELEGRAM_API_KEY = os.getenv('TELEGRAM_BOT_TOKEN')
+MYSQL_HOST = os.getenv('DB_HOST')
+MYSQL_USER = os.getenv('DB_USERNAME')
+MYSQL_PASSWORD = os.getenv('DB_PASSWORD')
+MYSQL_DATABASE = os.getenv('DB_DATABASE')
 
 # Configure the Gemini API
 genai.configure(api_key=API_KEY)
