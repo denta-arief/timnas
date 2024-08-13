@@ -43,7 +43,5 @@ class PingHost extends Command
         $this->controller->ping();
         $this->info('Command executed successfully.');
 
-        $pythonScript = base_path('telegram_bot.py');
-        exec("python {$pythonScript}");
     }
 }

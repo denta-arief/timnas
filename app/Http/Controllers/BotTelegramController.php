@@ -152,9 +152,18 @@ class BotTelegramController extends Controller
                     ;
                 }
             } else {
+                // Jika tidak ada perintah yang cocok, panggil fungsi untuk menjalankan script Python
+                $this->runPythonScript();
+
+                // Mengirim pesan default
                 $this->about();
             }
         };
+    }
+
+    public function runPythonScript(){
+        $pythonScript = base_path('telegram_bot.py');
+        exec("python {$pythonScript}");
     }
 
     public function about(){
