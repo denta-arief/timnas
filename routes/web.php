@@ -5,6 +5,7 @@ use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\MonitoringTransactionController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\BotTelegramController;
+use App\Http\Controllers\TimbanganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,8 @@ Route::get('/index', function () {
     return view('index');
 });
 
-Route::get('/test',[BotTelegramController::class,'testDevelop']);
+// Route::get('/test',[BotTelegramController::class,'testDevelop']);
+Route::get('/test',[TimbanganController::class,'insertTicket']);
 
 Route::prefix('devices')->group(function () {
     Route::get('/', [DeviceController::class, 'index']);
