@@ -14,9 +14,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // $schedule->command('ping:host')->hourly();
-        $schedule->command('ping:host')->everyFifteenMinutes();
+        // $schedule->command('ping:host')->everyFifteenMinutes();
         $schedule->command('app:insert-timbangan')->everyFiveMinutes();
-        $schedule->command('app:send-daily-pdf')->dailyAt('17:15');
+        // $schedule->command('app:send-daily-pdf')->dailyAt('17:15');
     }
 
     /**
