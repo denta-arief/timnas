@@ -11,16 +11,16 @@
     <title>Gentelella Alela! </title>
 
     <!-- Bootstrap -->
-    <link href="{{ url('/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="{{ url('/vendors/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('/vendors/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
     {{-- <script src="https://kit.fontawesome.com/3066ed00b4.js" crossorigin="anonymous"></script> --}}
     
     <!-- NProgress -->
-    <link href="{{ url('/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="{{ url('/build/css/custom.min.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('/build/css/custom.min.css') }}" rel="stylesheet">
 
     @yield('style')
   </head>
@@ -31,7 +31,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="{{ url('/index') }}" class="site_title"><i class="fa fa-paw"></i> <span>TIMNAS !!!</span></a>
+              <a href="{{ asset('/index') }}" class="site_title"><i class="fa fa-paw"></i> <span>TIMNAS !!!</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -39,11 +39,11 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="/images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="{{ Auth::user()->profile_picture ? asset(Auth::user()->profile_picture) : asset('images/img.jpg') }}" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>Staf TI</h2>
+                <span>Welcome</span>
+                <h2>{{ Auth::user()->name ?? Auth::user()->telegram_username ?? Auth::user()->email }}</h2>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -76,16 +76,16 @@
     </div>
 
     <!-- jQuery -->
-    <script src="{{ url('/vendors/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('/vendors/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap -->
-   <script src="{{ url('/vendors/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+   <script src="{{ asset('/vendors/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <!-- FastClick -->
-    <script src="{{ url('/vendors/fastclick/lib/fastclick.js') }}"></script>
+    <script src="{{ asset('/vendors/fastclick/lib/fastclick.js') }}"></script>
     <!-- NProgress -->
-    <script src="{{ url('/vendors/nprogress/nprogress.js') }}"></script>
+    <script src="{{ asset('/vendors/nprogress/nprogress.js') }}"></script>
     
     <!-- Custom Theme Scripts -->
-    <script src="{{ url('/build/js/custom.min.js') }}"></script>
+    <script src="{{ asset('/build/js/custom.min.js') }}"></script>
     @yield('script')
   </body>
 </html>

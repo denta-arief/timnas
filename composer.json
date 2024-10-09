@@ -11,6 +11,7 @@
         "irazasyed/telegram-bot-sdk": "^3.14",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
+        "laravel/socialite": "^5.16",
         "laravel/tinker": "^2.8"
     },
     "require-dev": {
@@ -64,6 +65,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
