@@ -38,7 +38,7 @@ return [
     ],
 
     'telegram' => [
-    'callback_url' => env('TELEGRAM_CALLBACK_URL'),
+    'callback_url' => env('TELEGRAM_WEBHOOK_URL'),
 ],
 
 ];
