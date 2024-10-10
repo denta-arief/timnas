@@ -30,12 +30,12 @@
                     @endauth
                 </div>
             @endif
-            <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-login="timnas_n7_bot" data-size="large" data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
+            {{-- <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-login="timnas_n7_bot" data-size="large" data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
                 <script type="text/javascript">
                 function onTelegramAuth(user) {
                     alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
                 }
-            </script>
+            </script> --}}
             
             <div class="max-w-7xl mx-auto p-6 lg:p-8">
                 <div class="flex justify-center">
