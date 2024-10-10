@@ -52,7 +52,7 @@ class LoginController extends Controller
 public function loginWithTelegram(Request $request)
     {
         // Arahkan pengguna ke bot Telegram
-        return redirect('https://telegram.me/timnasptp_bot?start'); // Ganti dengan username bot Telegram Anda
+        return redirect('https://telegram.me/' . env('TELEGRAM_BOT_USERNAME', 'timnas_n7_bot') . '?start'); // Ganti dengan username bot Telegram Anda
     }
 
 public function handleTelegramCallback(Request $request)
