@@ -11,7 +11,9 @@
         "irazasyed/telegram-bot-sdk": "^3.14",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
-        "laravel/tinker": "^2.8"
+        "laravel/socialite": "^5.16",
+        "laravel/tinker": "^2.8",
+        "socialiteproviders/telegram": "^4.1"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.9",
