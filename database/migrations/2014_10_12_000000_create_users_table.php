@@ -21,6 +21,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->string('google_id');
             $table->string('telegram_username');
+            $table->string('profile_picture');
             $table->timestamps();
         });
     }
