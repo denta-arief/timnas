@@ -8,10 +8,18 @@
     <a data-toggle="tooltip" data-placement="top" title="Lock">
       <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
     </a>
+<<<<<<< HEAD
     <a data-toggle="tooltip" data-placement="top" title="Logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
     <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
     </a>
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
     @csrf
     </form>
+=======
+    <a data-toggle="tooltip" data-placement="top" title="Logout" 
+   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+   <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+</a>
+
+>>>>>>> 59d3e6f2d953766e051eacb53911e5e1b6335155
 </div>

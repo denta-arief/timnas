@@ -34,6 +34,7 @@ return [
     'google' => [
     'client_id' => env('GOOGLE_CLIENT_ID'),
     'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+<<<<<<< HEAD
     'redirect' => env('GOOGLE_REDIRECT_URI'),
 ],
 
@@ -45,4 +46,13 @@ return [
 ],
 
 
+=======
+    'redirect' => env('GOOGLE_REDIRECT'),
+    ],
+
+    'telegram' => [
+    'callback_url' => env('TELEGRAM_WEBHOOK_URL'),
+],
+
+>>>>>>> 59d3e6f2d953766e051eacb53911e5e1b6335155
 ];

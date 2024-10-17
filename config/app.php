@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://localhost'),
 
     'asset_url' => env('ASSET_URL'),
 
@@ -170,7 +170,11 @@ return [
         App\Providers\RouteServiceProvider::class,
         Barryvdh\Snappy\ServiceProvider::class,
         Telegram\Bot\Laravel\TelegramServiceProvider::class,
+<<<<<<< HEAD
         SocialiteProviders\Manager\ServiceProvider::class,
+=======
+
+>>>>>>> 59d3e6f2d953766e051eacb53911e5e1b6335155
     ])->toArray(),
 
     /*

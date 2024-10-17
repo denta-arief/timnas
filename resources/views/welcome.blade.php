@@ -20,7 +20,7 @@
             @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                     @auth
-                        <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
+                        <a href="{{ url('/index') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
                     @else
                         <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
@@ -30,12 +30,12 @@
                     @endauth
                 </div>
             @endif
-            <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-login="timnas_n7_bot" data-size="large" data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
+            {{-- <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-login="timnas_n7_bot" data-size="large" data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
                 <script type="text/javascript">
                 function onTelegramAuth(user) {
                     alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
                 }
-            </script>
+            </script> --}}
             
             <div class="max-w-7xl mx-auto p-6 lg:p-8">
                 <div class="flex justify-center">

@@ -12,8 +12,12 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/socialite": "^5.16",
+<<<<<<< HEAD
         "laravel/tinker": "^2.8",
         "socialiteproviders/telegram": "^4.1"
+=======
+        "laravel/tinker": "^2.8"
+>>>>>>> 59d3e6f2d953766e051eacb53911e5e1b6335155
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.9",
@@ -66,6 +70,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
